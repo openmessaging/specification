@@ -21,11 +21,11 @@
 #### 1.3.2 Queue Ordering
 #### 1.3.3 Durability
 
-## 2 OMS Domains
+## 2 Model Components
 ### 2.1 Topic Pub/Sub
 #### 2.1.1 Topic
 #### 2.1.2 Publish
-#### 2.1.3 Subscription
+#### 2.1.3 Subscribe
 ### 2.2 Queue
 ## 3 Message Model
 ### 3.1 Message Type
@@ -65,6 +65,7 @@
 #### 4.5.4 Consumer Interceptor Points
 ### 4.6 Exception
 ## 5 Benchmark
-## 6 Example of OpenMessaging API
 ## Appendix 
+### Example of OpenMessaging API
 ### Change History
+
