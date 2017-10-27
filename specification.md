@@ -1,5 +1,6 @@
 # OpenMessaging Specification
 
+## License
 ## 0 Overview
 ### 0.1 What is OpenMessaging?
 ### 0.2 Why OpenMessaging?
@@ -9,8 +10,6 @@
 ## 1 OMS Architecture
 ### 1.1 OMS Ecosystem
 ### 1.2 Domain Arch
-### 1.3 Interface Arch 
-### 1.4 Send/Receive Arch
 
 ## 2 OMS Domains
 ### 2.1 Topic Pub/Sub
@@ -45,7 +44,9 @@
 ### 4.1 MessagingAccessPoint
 ### 4.2 ResourceManager
 ### 4.3 Producer
-#### 4.3.1 BatchMessageSender
 ### 4.4 Consumer
 ### 4.5 Interceptor
 ### 4.6 Exception
+## 5 Example of OpenMessaging API
+## Appendix 
+### Change History
