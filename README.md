@@ -6,9 +6,9 @@ This repository is a place to document (and discuss) the OpenMessaging specifica
 OpenMessaging is vendor-neutral and language-independent, provides industry guidelines for areas of finance, e-commerce, IoT and big-data, and aimed to develop messaging and streaming applications across heterogeneous systems and platforms.
 
 # Proposal
-[specification](specification.md)
-[domain architecture](domain_architecture.md)
-[use case](usecase.md)
+#### [specification](specification.md)
+#### [domain architecture](domain_architecture.md)
+#### [use case](usecase.md)
 
 
 # Communications
