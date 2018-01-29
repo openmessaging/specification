@@ -2,4 +2,15 @@
 
 This repository is a place to document (and discuss) the OpenMessaging specification itself (independent of any particular language or platform).
 
-This repository contains [specification](specification.md), [domain architecture](domain_architecture.md), [use case](usecase.md), etc.
+# Goals
+OpenMessaging is vendor-neutral and language-independent, provides industry guidelines for areas of finance, e-commerce, IoT and big-data, and aimed to develop messaging and streaming applications across heterogeneous systems and platforms.
+
+# Proposal
+[specification](specification.md)
+[domain architecture](domain_architecture.md)
+[use case](usecase.md)
+
+
+# Communications
+Chat with us on the OpenMessaging Slack in the #general channel: https://openmessaging.slack.com
+
