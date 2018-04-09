@@ -9,7 +9,7 @@ This section describes the standard schema of the OpenMessaging access point URI
 The following is the standard URI connection scheme:
 
 ```
-oms:<driver_type>://[account_id@]host1[:port1][,host2[:port2],...[,hostN[:portN]]]/<region>:<namespace>
+oms:<driver_type>://[account_id@]host1[:port1][,host2[:port2],...[,hostN[:portN]]]/<region>
 ```
 
 The components of this string are:
@@ -23,8 +23,7 @@ The components of this string are:
 | port1 | Optional. The default value is 80 if not specified. |
 | hostN | Optional. You can specify as many hosts as necessary. You would specify multiple hosts. |
 | portN | Optional. The default value is 80 if not specified. |
-| region | Required. The region the namespace resides in. |
-| namespace | Required. The namespace the OMS resource resides in. |
+| region | Required. The target region. |
 
 ### Access Point Example
 
@@ -33,7 +32,7 @@ The components of this string are:
   The following example connects user alice to a rocketmq implementation in region us-east:
 
   ```
-  oms:rocketmq://alice@rocketmq.apache.org/us-east:default_space
+  oms:rocketmq://alice@rocketmq.apache.org/us-east
   ```
 
 2. Multiple hosts
@@ -41,5 +40,5 @@ The components of this string are:
   The multiple hosts are often used to load balancing.
 
   ```
-  oms:rocketmq://alice@rocketmq.apache.org, openmessaging.io/us-east:default_space
+  oms:rocketmq://alice@rocketmq.apache.org, openmessaging.io/us-east
   ```
