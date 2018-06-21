@@ -8,10 +8,29 @@ OpenMessaging is vendor-neutral and language-independent, provides industry guid
 # Landscape
 ![landscape](assets/images/landscape-0.1.0-alpha.png)
 
+# OpenMessaging
+Please see https://openmessaging.cloud/.
+
+# Schema
+    {       
+    "messages": {
+            "credential":{
+                "type": "user", 
+                "accountId": "123456789012", 
+                "accessKeyId": "EXAMPLE_KEY_ID", 
+                "userName": "Alice"
+                   },
+             "message":{
+                  "headers":{"userHeaders":{},"sysHeaders":{}},
+                  "properties"：{"messageId":"","bornTime":"","bornHost":"","storeTime":"","messageId":"","borenTime":"","bornHost":"","storeTime":"","deliveryTime":"","deliveryCount":"","ttl":"","correlationId":"","priority":"","traceId":"","transactionId":""},"bodies":{}
+                      }
+           }
+    }
+
+
 
 # Proposal
 #### [specification](specification.md)
-#### [domain architecture](domain_architecture.md)
 #### [use case](usecase.md)
 
 
