@@ -9,7 +9,7 @@ OpenMessaging is vendor-neutral and language-independent, provides industry guid
 ![landscape](assets/images/landscape-0.1.0-alpha.png)
 
 # OpenMessaging
-Please see https://openmessaging.cloud/.
+Please see http://openmessaging.cloud/.
 
 # Schema
     {       
