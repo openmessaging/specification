@@ -38,5 +38,5 @@ Please see http://openmessaging.cloud/.
 
 
 # Communications
-Chat with us on the OpenMessaging Slack in the [#general channel:](https://join.slack.com/t/openmessaging/shared_invite/enQtMzg1NzEyNTQ3ODkzLWIyYzdiMGIyYzhmM2NmNTYzNmUzNTc5NDFhZDhjN2UyODAwY2ZlZTNjZDhhZmZmMWU1ZmMyMDMzMTg5ZjAxZTQ) 
+Chat with us on the OpenMessaging Slack in the [#general channel:](https://openmessaging.herokuapp.com/) 
 
