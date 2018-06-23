@@ -15,20 +15,42 @@ OpenMessaging is vendor-neutral and language-independent, provides industry guid
 Please see http://openmessaging.cloud/.
 
 # Schema
-    {       
+```json
+{
     "messages": {
-            "credential":{
-                "type": "user", 
-                "accountId": "123456789012", 
-                "accessKeyId": "EXAMPLE_KEY_ID", 
-                "userName": "Alice"
-                   },
-             "message":{
-                  "headers":{"userHeaders":{},"sysHeaders":{}},
-                  "properties"：{"messageId":"","bornTime":"","bornHost":"","storeTime":"","messageId":"","borenTime":"","bornHost":"","storeTime":"","deliveryTime":"","deliveryCount":"","ttl":"","correlationId":"","priority":"","traceId":"","transactionId":""},"bodies":{}
-                      }
-           }
+        "credential": {
+            "type": "user",
+            "accountId": "123456789012",
+            "accessKeyId": "EXAMPLE_KEY_ID",
+            "userName": "Alice"
+        },
+        "message": {
+            "headers": {
+                "userHeaders": {},
+                "sysHeaders": {}
+            },
+            "properties": {
+                "messageId": "",
+                "bornTime": "",
+                "bornHost": "",
+                "storeTime": "",
+                "messageId": "",
+                "borenTime": "",
+                "bornHost": "",
+                "storeTime": "",
+                "deliveryTime": "",
+                "deliveryCount": "",
+                "ttl": "",
+                "correlationId": "",
+                "priority": "",
+                "traceId": "",
+                "transactionId": ""
+            },
+            "bodies": {}
+        }
     }
+}
+```
 
 
 
