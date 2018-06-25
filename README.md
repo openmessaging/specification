@@ -19,10 +19,8 @@ Please see http://openmessaging.cloud/.
 {
     "messages": {
         "credential": {
-            "type": "user",
-            "accountId": "123456789012",
-            "accessKeyId": "EXAMPLE_KEY_ID",
-            "userName": "Alice"
+            "accountId": "",
+            "accessKeyId": "",
         },
         "message": {
             "headers": {
@@ -42,23 +40,4 @@ Please see http://openmessaging.cloud/.
                 "ttl": "",
                 "correlationId": "",
                 "priority": "",
-                "traceId": "",
-                "transactionId": "",
-                "searchIndex": "",
-            },
-            "bodies": {}
-        }
-    }
-}
-```
-
-
-
-# Proposal
-#### [specification](specification.md)
-#### [use case](usecase.md)
-
-
-# Communications
-Chat with us on the OpenMessaging Slack in the [#general channel:](https://openmessaging.herokuapp.com/) 
-
+                "t
