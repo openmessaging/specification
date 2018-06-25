@@ -24,20 +24,37 @@ Please see http://openmessaging.cloud/.
         },
         "message": {
             "headers": {
-                "userHeaders": {},
-                "sysHeaders": {}
+                "sysHeaders": {
+                   "messageId": "",
+                   "bornTime": "",
+                   "bornHost": "",
+                   "storeTime": "",
+                   "storeHost": "",
+                   "deliveryMode": "",
+                   "deliveryTime": "",
+                   "deliveryCount": "",
+                   "deliveryDelayExpression": "",
+                   "ttl": "",
+                   "correlationId": "",
+                   "priority": "",
+                   "traceId": "",
+                   "transactionId": "",
+                   "searchIndex": "",
+                 "userHeaders": {}
             },
-            "properties": {
-                "messageId": "",
-                "bornTime": "",
-                "bornHost": "",
-                "storeTime": "",
-                "storeHost": "",
-                "deliveryMode": "",
-                "deliveryTime": "",
-                "deliveryCount": "",
-                "deliveryDelayExpression": "",
-                "ttl": "",
-                "correlationId": "",
-                "priority": "",
-                "t
+            "properties": {},
+            "bodies": {}
+        }
+    }
+}
+```
+
+
+
+# Proposal
+#### [specification](specification.md)
+#### [use case](usecase.md)
+
+
+# Communications
+Chat with us on the OpenMessaging Slack in the [#general channel:](https://openmessaging.herokuapp.com/) 
