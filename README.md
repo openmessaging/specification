@@ -34,17 +34,17 @@ Please see http://openmessaging.cloud/.
                 "bornTime": "",
                 "bornHost": "",
                 "storeTime": "",
-                "messageId": "",
-                "borenTime": "",
-                "bornHost": "",
-                "storeTime": "",
+                "storeHost": "",
+                "deliveryMode": "",
                 "deliveryTime": "",
                 "deliveryCount": "",
+                "deliveryDelayExpression": "",
                 "ttl": "",
                 "correlationId": "",
                 "priority": "",
                 "traceId": "",
-                "transactionId": ""
+                "transactionId": "",
+                "searchIndex": "",
             },
             "bodies": {}
         }
