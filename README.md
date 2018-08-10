@@ -16,44 +16,39 @@ Please see http://openmessaging.cloud/.
 
 # Schema
 ```json
-{
-    "messages": {
-        "credential": {
-            "accountId": "",
-            "accessKeyId": "",
-        },
+  {
         "message": {
-            "headers": {
-                "sysHeaders": {
-                   "messageId": "",
-                   "bornTime": "",
-                   "bornHost": "",
-                   "storeTime": "",
-                   "storeHost": "",
-                   "deliveryMode": "",
-                   "deliveryTime": "",
-                   "deliveryCount": "",
-                   "deliveryDelayExpression": "",
-                   "ttl": "",
-                   "correlationId": "",
-                   "priority": "",
-                   "traceId": "",
-                   "transactionId": "",
-                   "searchIndex": "",
-                 "userHeaders": {}
+           "version":"0.3.0",
+           "headers": {
+               "messageId": "7F00000100002873000000000004F49C",
+               "topic":"helloTopic",
+               "queue":1,
+               "bornTimestamp": 1533780827824,
+               "bornHost": "172.24.0.101:10035",
+               "storeTimestamp": 1533780827825,
+               "storeHost": "172.24.0.102:52511",
+               "expire": 1533780830000,
+               "priority": 1,
+               "compression":"gzip",
+               "traceId": "1E0578887D3F18B4AAC22B64D2B00A5E",
+               "transactionId": "1E0578887D3F18B4AAC22B64D2B40A62",
+               "searchKey": "hello",
+               "delayTime": 30000,
+               "durability": 1,
+               "correlationId": "7F00000100002873000000000004F2B4"
             },
-            "properties": {},
-            "bodies": {}
+            "properties": {
+               "service": "helloService"
+            },
+            "payload": {}
         }
     }
-}
 ```
 
 
 
 # Proposal
-#### [specification](specification.md)
-#### [use case](usecase.md)
+#### [specification](specification-schema.md)
 
 
 # Communications

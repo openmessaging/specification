@@ -1,0 +1,12 @@
+.classpath
+.project
+.settings/
+target/
+devenv
+*.log*
+*.iml
+.idea/
+*.versionsBackup
+!NOTICE-BIN
+!LICENSE-BIN
+.DS_Store
