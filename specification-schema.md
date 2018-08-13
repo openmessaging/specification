@@ -10,7 +10,7 @@
 ## License
 ## 0 Overview
 ### 0.1 What is OpenMessaging?
-   OpenMessaging is a cloud-oriented, vendor-neutral open standard for distributed messaging.
+   OpenMessaging is a cloud-native, vendor-neutral open standard for distributed messaging.
    
 ### 0.2 Why OpenMessaging?
 #### 0.2.1 Goals
@@ -104,17 +104,7 @@
    - Description: An unique identifier for a message.  When a message is sent, messageId is ignored. When the send method returns it contains a provider-assigned value.
    - Constraints: REQUIRED and MUST be a non-empty `String`.
    
-#### 2.3.2 topic
-   - Type: `String`   
-   - Description: An identity of a message logic destination.
-   - Constraints: REQUIRED and MUST be a non-empty `String`.
-   
-#### 2.3.3 queue
-   - Type: `String`   
-   - Description: An identity of a message physical destination.
-   - Constraints: REQUIRED and MUST be a non-empty `String`.
-   
-#### 2.3.4 bornTimestamp
+#### 2.3.2 bornTimestamp
    - Type: `Long` 
    - Description: The timestamp of the message sent by the client. 
    It is not the time the message was actually transmitted because the actual send may occur later due to transactions or other client side queueing of messages.   
@@ -122,78 +112,78 @@
    It is represented as a long value which is defined as the difference, measured in milliseconds, between this time and midnight, January 1, 1970 UTC.
    - Constraints: REQUIRED 
    
-#### 2.3.5 bornHost
+#### 2.3.3 bornHost
    - Type: `String` 
    - Description: When a message is sent, this field will be set with the local host info of client.
    - Constraints: REQUIRED and MUST be a non-empty `String`.
    
-#### 2.3.6 storeTimestamp
+#### 2.3.4 storeTimestamp
    - Type: `Long` 
    - Description: The timestamp that a message stored by server. when a message is stored by server, this field will be set with the current timestamp of server.  
    It is represented as a long value which is defined as the difference, measured in milliseconds, between this time and midnight, January 1, 1970 UTC.
    - Constraints: REQUIRED 
    
-#### 2.3.7 storeHost
+#### 2.3.5 storeHost
    - Type: `String`
    - Description: The host info of the server that stores this message. when a message is stored by server, this field will be set with the host info of server.
    - Constraints: REQUIRED
   
-#### 2.3.8 priority
+#### 2.3.6 priority
    - Type: `Integer`
    - Description: OpenMessaging defines a ten level priority value with 1 as the lowest priority and 10 as the highest, and the default priority is 5. The priority beyond this region will be ignored.
    OpenMessaging does not require or provide any guarantee that the message should be delivered  in priority order strictly, but the vendor should provide a best effort to deliver expedited messages ahead of normal messages.
    - Constraints: OPTIONAL
    
-#### 2.3.9 durability
+#### 2.3.7 durability
    - Type: `Integer`
    - Description: OpenMessaging defines two modes of message delivery:  
    **PERSISTENT**: when this field value is set with 0, the persistent mode instructs the vendor should provide stable storage to ensure the message won't be lost.  
    **NON_PERSISTENT**: when this field value is set with 1, this mode does not require the message be logged to stable storage, in most cases, the memory storage is enough for better performance and lower cost.  
    - Constraints: OPTIONAL
    
-#### 2.3.10 searchKey
+#### 2.3.8 searchKey
    - Type: `String`
    - Description: The keyword indexes will be built by the search keys, users can query similar messages through these indexes and have a quick response.
    - Constraints: OPTIONAL
 
-#### 2.3.11 delayTime
+#### 2.3.9 delayTime
    - Type: `Long`
    - Description: The message will be delivered after `delayTime` milliseconds starting from `bornTimeStamp` . 
    When this filed isn't set explicitly, this means this message should be delivered immediately.
    - Constraints: OPTIONAL
    
-#### 2.3.12 expireTime
+#### 2.3.10 expireTime
    - Type: `Long` 
    - Description: This field represents the discard time of the message, if an undelivered message's `expireTime` is reached, the message would be destroyed. If an earlier timestamp is set than `expireTime` or isn't set explicitly, that means the message will not be expired.  
    It is represented as a long value which is defined as the difference, measured in milliseconds, between this time and midnight, January 1, 1970 UTC.
    - Constraints: OPTIONAL
    
    
-#### 2.3.13 traceId
+#### 2.3.11 traceId
    - Type: `String`
    - Description: This identifier represents a global and unique identification, to associate key events in the whole lifecycle of a message,
    like sent by who, stored at where, and received by who. And, the messaging system only plays exchange role in a distributed system in most cases,
    so the TraceID can be used to trace the whole call link with other parts in the whole system.
    - Constraints: OPTIONAL
    
-#### 2.3.14 compression
+#### 2.3.12 compression
    - Type: `String`
    - Description: This field represents the message body compress algorithm。 
      vendors are free to choose the compression algorithm, but must ensure that the decompressed message is delivered to the user.
    - Constraints: OPTIONAL
 
-#### 2.3.15 transactionId
+#### 2.3.13 transactionId
    - Type: `String`
    - Description: This field is used in transactional message, and it can be used to trace a transaction.
    so the same `transactionId` will be appeared not only in prepare message, but also in commit message, and consumer received message also contains this field.
    - Constraints: OPTIONAL
    
-#### 2.3.16 deliveryCount
+#### 2.3.14 deliveryCount
    - Type: `Integer`
    - Description:  This field indicates the times of the message was delivered, when a consumer consumes a message failed, it will be resend to the server for consume it later. and this field records the consumed times during the consume process.
    - Constraints: REQUIRED
    
-#### 2.3.17 correlationId
+#### 2.3.15 correlationId
    - Type: `String`
    - Description: A client can use the correlationId header field to link one message with another. A typical use is to link a response message with its request message.
    - Constraints: OPTIONAL
@@ -282,8 +272,6 @@ In OpenMessaging, RPC is equal to synchronous message, it isn’t traditional CS
            "version":"0.3.0",
            "headers": {
                "messageId": "7F00000100002873000000000004F49C",
-               "topic":"helloTopic",
-               "queue":1,
                "bornTimestamp": 1533780827824,
                "bornHost": "172.24.0.101:10035",
                "storeTimestamp": 1533780827825,

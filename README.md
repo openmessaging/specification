@@ -21,8 +21,6 @@ Please see http://openmessaging.cloud/.
            "version":"0.3.0",
            "headers": {
                "messageId": "7F00000100002873000000000004F49C",
-               "topic":"helloTopic",
-               "queue":1,
                "bornTimestamp": 1533780827824,
                "bornHost": "172.24.0.101:10035",
                "storeTimestamp": 1533780827825,
