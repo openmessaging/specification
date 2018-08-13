@@ -201,7 +201,7 @@ This document lists the most of common use cases supported by OpenMessaging.
 1. P2P
 2. Publish/Subscribe
 3. Broadcast
-4. Highway/assets/images/use_cases
+4. Highway
 5. Streaming
 6. Filter
 7. Routing
