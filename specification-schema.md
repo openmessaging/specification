@@ -168,7 +168,7 @@
    
 #### 2.3.12 compression
    - Type: `String`
-   - Description: This field represents the message body compress algorithm。 
+   - Description: This field represents the message body compress algorithm.    
      vendors are free to choose the compression algorithm, but must ensure that the decompressed message is delivered to the user.
    - Constraints: OPTIONAL
 
