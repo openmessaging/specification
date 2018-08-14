@@ -276,7 +276,7 @@ In OpenMessaging, RPC is equal to synchronous message, it isn’t traditional CS
                "bornHost": "172.24.0.101:10035",
                "storeTimestamp": 1533780827825,
                "storeHost": "172.24.0.102:52511",
-               "expire": 1533780830000,
+               "expireTime": 1533780830000,
                "priority": 1,
                "compression":"gzip",
                "traceId": "1E0578887D3F18B4AAC22B64D2B00A5E",
