@@ -38,7 +38,7 @@ Please see http://openmessaging.cloud/.
             "properties": {
                "service": "helloService"
             },
-            "payload": {}
+            "payload": []
         }
     }
 ```

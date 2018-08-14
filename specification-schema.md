@@ -289,7 +289,7 @@ In OpenMessaging, RPC is equal to synchronous message, it isn’t traditional CS
             "properties": {
                "service": "helloService"
             },
-            "payload": {}
+            "payload": []
         }
     }
 ```
