@@ -51,7 +51,7 @@
   
   - `String` - Sequence of printable Unicode characters.
   - `Binary` - Sequence of bytes.
-  - `KeyValue` - `String`-indexed dictionary of `Object`-typed values
+  - `KeyValue` - `String`-indexed dictionary of `String`-typed or `Binary`-typed or `Numeric`-typed values
   - `Numeric`:    
         - `Short` - Integer in the range -(2^15) to 2^15 - 1 inclusive.
         - `Integer` - Integer in the range -(2^31) to 2^31 - 1 inclusive.  
