@@ -14,7 +14,7 @@
    
 ### 0.2 Why OpenMessaging?
 #### 0.2.1 Goals
-   Messaging and Streaming products have been widely used in modern architecture and data processing, for decoupling, queuing, buffering, ordering, replicating, etc. But when data transfers across different messaging and streaming platforms, the compatibility problem arises, which always means much additional work. Although JMS was a good solution during the past decade, it is limited in java environment, lacks specified guidelines for load balance/fault-tolerance, administration, security, and streaming feature, which make it not good at satisfying modern cloud-native messaging and streaming applications.
+   Messaging products have been widely used in modern architecture and data processing, for decoupling, queuing, buffering, ordering, replicating, etc. But when data transfers across different messaging and streaming platforms, the compatibility problem arises, which always means much additional work. Although JMS was a good solution during the past decade, it is limited in java environment, lacks specified guidelines for load balance/fault-tolerance, administration, security, and streaming feature, which make it not good at satisfying modern cloud-native messaging and streaming applications. While OpenMessaging aims at :
 
    - Language-agnostic and platform independence. message standard support multiple platforms, architectures or systems.   
    - Global, cloud-native, vendor-neutral industry standard for distributed messaging.   
