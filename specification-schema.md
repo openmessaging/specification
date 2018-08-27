@@ -92,7 +92,7 @@
    - Description: In addition to the system header, OpenMessaging provides a built-in user properties for adding optional fields to a message, and these fields are represented as key-value forms.
    - Constraints: REQUIRED
    
-#### 2.2.4 payload
+#### 2.2.4 data
    - Type: `Binary`  
    - Description: This field is the part of transmitted data that is the actual intended message contains application data.   
    The message body is completely transparent to the server, the server cannot view or modify the message body.  
@@ -141,9 +141,10 @@
    **NON_PERSISTENT**: when this field value is set with 1, this mode does not require the message be logged to stable storage, in most cases, the memory storage is enough for better performance and lower cost.  
    - Constraints: OPTIONAL
    
-#### 2.3.8 searchKey
+#### 2.3.8 messageKey
    - Type: `String`
-   - Description: The keyword indexes will be built by the search keys, users can query similar messages through these indexes and have a quick response.
+   - Description: This key that specifies that a message belongs to a specific message group, and this key can be used for the server to shard or
+     dispatch messages.
    - Constraints: OPTIONAL
 
 #### 2.3.9 delayTime
@@ -188,7 +189,13 @@
    - Description: A client can use the correlationId header field to link one message with another. A typical use is to link a response message with its request message.
    - Constraints: OPTIONAL
   
-   
+#### 2.3.16 destination  
+   -Type: `String`
+   -Description: This filed contains the logic destination to which the message is being sent, such as a queue or a topic.
+   When a message is sent this value is set to the right queue, then the message will be sent to the specified destination.
+   When a message is received, its destination is equivalent to the queue where the message resides in.
+   - Constraints: REQUIRED          
+  
 ### Notational Conventions
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
 "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to
@@ -281,7 +288,8 @@ In OpenMessaging, RPC is equal to synchronous message, it isn’t traditional CS
                "compression":"gzip",
                "traceId": "1E0578887D3F18B4AAC22B64D2B00A5E",
                "transactionId": "1E0578887D3F18B4AAC22B64D2B40A62",
-               "searchKey": "hello",
+               "destination": "orderQueue",
+               "messageKey": "orderId-103368921567",
                "delayTime": 30000,
                "durability": 1,
                "correlationId": "7F00000100002873000000000004F2B4"
@@ -289,7 +297,7 @@ In OpenMessaging, RPC is equal to synchronous message, it isn’t traditional CS
             "properties": {
                "service": "helloService"
             },
-            "payload": {}
+            "data": {}
         }
     }
 ```

@@ -30,7 +30,8 @@ Please see http://openmessaging.cloud/.
                "compression": "gzip",
                "traceId": "1E0578887D3F18B4AAC22B64D2B00A5E",
                "transactionId": "1E0578887D3F18B4AAC22B64D2B40A62",
-               "searchKey": "hello",
+               "destination": "orderQueue",
+               "messageKey": "orderId-103368921567",
                "delayTime": 30000,
                "durability": 1,
                "correlationId": "7F00000100002873000000000004F2B4"
@@ -38,7 +39,7 @@ Please see http://openmessaging.cloud/.
             "properties": {
                "service": "helloService"
             },
-            "payload": {}
+            "data": {}
         }
     }
 ```
