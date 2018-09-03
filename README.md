@@ -18,7 +18,7 @@ Please see http://openmessaging.cloud/.
 ```json
   {
         "message": {
-           "version":"0.3.0",
+           "version":"1.0.0",
            "headers": {
                "messageId": "7F00000100002873000000000004F49C",
                "bornTimestamp": 1533780827824,
