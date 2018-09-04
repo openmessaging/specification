@@ -2,7 +2,7 @@
 
 ## Overview
 
-![](/assets/images/domain-design-0.1.0-alpha.png)
+![](/assets/images/domain-design-1.0.0-preview.png)
 
 Above is the domain architecture of Open Messaging, see JavaDoc for details.
 
@@ -25,7 +25,6 @@ OpenMessaging defines two kinds of Consumer: **PullConsumer**, **PushConsumer** 
 
 * **PullConsumer**, pulls messages from the specified queue, supports submit the consume result by acknowledgement at any time. One PullConsumer only can pull messages from one fixed queue.
 * **PushConsumer**, receives messages from multiple queues, these messages are pushed from the MOM server. PushConsumer can attach to multiple queues with separate MessageListener and submit consume result through **ReceivedMessageContext** at any time.
-* **StreamingConsumer**, a brand-new consumer type, a stream-oriented consumer, to integrate messaging system with Streaming/BigData related platforms easily. StreamingConsumer supports consume messages from partitions of a specified queue like a iterator.
 
 ## Topic Queue and Routing
 

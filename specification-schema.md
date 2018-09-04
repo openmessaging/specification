@@ -276,7 +276,7 @@ In OpenMessaging, RPC is equal to synchronous message, it isn’t traditional CS
 ```json
  {
         "message": {
-           "version":"0.3.0",
+           "version":"1.0.0",
            "headers": {
                "messageId": "7F00000100002873000000000004F49C",
                "bornTimestamp": 1533780827824,
@@ -304,3 +304,4 @@ In OpenMessaging, RPC is equal to synchronous message, it isn’t traditional CS
 
 ### Change History
 0.3.0 version created, be compatible with existent runtime API.
+1.0.0 version created, change domain model to queue based model, add type system and schema.
