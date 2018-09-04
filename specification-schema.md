@@ -303,5 +303,5 @@ In OpenMessaging, RPC is equal to synchronous message, it isn’t traditional CS
 ```
 
 ### Change History
-0.3.0 version created, be compatible with existent runtime API.
+0.3.0 version created, be compatible with existent runtime API.      
 1.0.0 version created, change domain model to queue based model, add type system and schema.
