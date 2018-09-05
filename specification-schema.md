@@ -299,7 +299,7 @@ In OpenMessaging, RPC is equal to synchronous message, it isn’t traditional CS
             },
             "data": {}
         }
-    }
+ }
 ```
 
 ### Change History
