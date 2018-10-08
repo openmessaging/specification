@@ -66,7 +66,7 @@
   The `Object` type is a variant type that can take the shape of either a
   `String` or a `Binary` or a `KeyValue` or a `Numeric`. The type system is intentionally
   abstract, and therefore it is left to implementations how to represent the
-  variant type.
+  variant type(Reference to the `Object` description of [CloudEvents](https://github.com/cloudevents/spec/blob/v0.1/spec.md)).
  
 ## 2 Message Model
 ### 2.1 Message Type
