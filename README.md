@@ -46,6 +46,8 @@ Please see http://openmessaging.cloud/.
 
 
 
+
+
 # Proposal
 #### [specification](specification-schema.md)
 
