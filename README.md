@@ -7,9 +7,6 @@ OpenMessaging is vendor-neutral and language-independent, provides industry guid
 
 # Landscape
 ![landscape](assets/images/landscape-1.0.0-preview.png)
-##### MRI - OpenMessaging Runtime Interface
-##### MCI - OpenMessaging Connector Interface
-##### MBI - OpenMessaging Benchmark Interface
 
 # OpenMessaging
 Please see http://openmessaging.cloud/.
