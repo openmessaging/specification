@@ -14,12 +14,18 @@
    
 ### 0.2 Why OpenMessaging?
 #### 0.2.1 Goals
-   Messaging products have been widely used in modern architecture and data processing, for decoupling, queuing, buffering, ordering, replicating, etc. But when data transfers across different messaging and streaming platforms, the compatibility problem arises, which always means much additional work. Although JMS was a good solution during the past decade, it is limited in java environment, lacks specified guidelines for load balance/fault-tolerance, administration, security, and streaming feature, which make it not good at satisfying modern cloud-native messaging and streaming applications. While OpenMessaging aims at :
+   Messaging products have been widely used in modern architecture and data processing, for decoupling, queuing, buffering, 
+   ordering, replicating, etc. But when data transfers across different messaging and streaming platforms, the compatibility 
+   problem arises, which always means much additional work. Although JMS was a good solution during the past decade, it 
+   is limited in java environment, lacks specified guidelines for load balance/fault-tolerance, administration, security, 
+   and streaming feature, which make it not good at satisfying modern cloud-native messaging and streaming applications. 
+   While OpenMessaging aims at :
 
    - Language-agnostic and platform independence. message standard support multiple platforms, architectures or systems.   
    - Global, cloud-native, vendor-neutral industry standard for distributed messaging.   
    - Facilitating a standard benchmark for testing applications.   
-   - Targeting cloud data streaming and messaging requirements with scalability, flexibility, isolation, and security built in Fostering a growing community of contributing developers.   
+   - Targeting cloud data streaming and messaging requirements with scalability, flexibility, isolation, and security 
+     built in Fostering a growing community of contributing developers.   
 
 #### 0.2.1 Non-Goals
    The following will not be part of the specification:   
@@ -81,12 +87,19 @@
    - Description: The version of OpenMessaging standard. 
    - Constraints: REQUIRED 
    
-#### 2.2.2 headers
+#### 2.2.2 header
    - Type: `KeyValue`  
    - Description: All messages support the same set of header fields, and these header fields are used by system, which are usually used for such as identify and route messages.
     Specific fields can be found in the next [chapter](#2.3-message-header).
    - Constraints: REQUIRED
    
+#### 2.2.3 extensionHeader
+   - Type: `KeyValue`  
+   - Description: This field contains extension metadata for message middleware, and these extension fields are not mandatory, but for the time being, most of the message middleware has been
+    implemented related content more or less, and these fields have been well known and understood by many messaging and streaming developers, See the ExtFields document for a list of possible properties.
+    See the [ExtFields document](./extensionHeader.md) for a list of possible properties.
+   - Constraints: OPTIONAL
+      
 #### 2.2.3 properties
    - Type: `KeyValue`  
    - Description: In addition to the system header, OpenMessaging provides a built-in user properties for adding optional fields to a message, and these fields are represented as key-value forms.
@@ -116,85 +129,30 @@
    - Type: `String` 
    - Description: When a message is sent, this field will be set with the local host info of client.
    - Constraints: REQUIRED and MUST be a non-empty `String`.
-   
-#### 2.3.4 storeTimestamp
-   - Type: `Long` 
-   - Description: The timestamp that a message stored by server. when a message is stored by server, this field will be set with the current timestamp of server.  
-   It is represented as a long value which is defined as the difference, measured in milliseconds, between this time and midnight, January 1, 1970 UTC.
-   - Constraints: REQUIRED 
-   
-#### 2.3.5 storeHost
-   - Type: `String`
-   - Description: The host info of the server that stores this message. when a message is stored by server, this field will be set with the host info of server.
-   - Constraints: REQUIRED
-  
-#### 2.3.6 priority
-   - Type: `Integer`
-   - Description: OpenMessaging defines a ten level priority value with 1 as the lowest priority and 10 as the highest, and the default priority is 5. The priority beyond this region will be ignored.
-   OpenMessaging does not require or provide any guarantee that the message should be delivered  in priority order strictly, but the vendor should provide a best effort to deliver expedited messages ahead of normal messages.
-   - Constraints: OPTIONAL
-   
-#### 2.3.7 durability
-   - Type: `Integer`
-   - Description: OpenMessaging defines two modes of message delivery:  
-   **PERSISTENT**: when this field value is set with 0, the persistent mode instructs the vendor should provide stable storage to ensure the message won't be lost.  
-   **NON_PERSISTENT**: when this field value is set with 1, this mode does not require the message be logged to stable storage, in most cases, the memory storage is enough for better performance and lower cost.  
-   - Constraints: OPTIONAL
-   
-#### 2.3.8 messageKey
-   - Type: `String`
-   - Description: This key that specifies that a message belongs to a specific message group, and this key can be used for the server to shard or
-     dispatch messages.
-   - Constraints: OPTIONAL
 
-#### 2.3.9 delayTime
-   - Type: `Long`
-   - Description: The message will be delivered after `delayTime` milliseconds starting from `bornTimeStamp` . 
-   When this filed isn't set explicitly, this means this message should be delivered immediately.
-   - Constraints: OPTIONAL
    
-#### 2.3.10 expireTime
-   - Type: `Long` 
-   - Description: This field represents the discard time of the message, if an undelivered message's `expireTime` is reached, the message would be destroyed. If an earlier timestamp is set than `expireTime` or isn't set explicitly, that means the message will not be expired.  
-   It is represented as a long value which is defined as the difference, measured in milliseconds, between this time and midnight, January 1, 1970 UTC.
-   - Constraints: OPTIONAL
+#### 2.3.4 qos
+   - Type: `Integer`
+   - Description: OpenMessaging defines three modes of message delivery as mentioned in [chapter](#0.3.5-Delivery-Semantics):  
+   **At least once**: if this value set with 0, a message will be consumed at least once, and this value should be set as default value.  
+   **At most once**: if this value set with 1, a message will be consumed at most once, in this semantics, messages may be lost.  
+   **Exactly once**: if this value set with 2, a message will be consumed once and only once.  
    
-   
-#### 2.3.11 traceId
-   - Type: `String`
-   - Description: This identifier represents a global and unique identification, to associate key events in the whole lifecycle of a message,
-   like sent by who, stored at where, and received by who. And, the messaging system only plays exchange role in a distributed system in most cases,
-   so the TraceID can be used to trace the whole call link with other parts in the whole system.
-   - Constraints: OPTIONAL
-   
-#### 2.3.12 compression
+
+#### 2.3.5 compression
    - Type: `String`
    - Description: This field represents the message body compress algorithm.    
      vendors are free to choose the compression algorithm, but must ensure that the decompressed message is delivered to the user.
    - Constraints: OPTIONAL
 
-#### 2.3.13 transactionId
-   - Type: `String`
-   - Description: This field is used in transactional message, and it can be used to trace a transaction.
-   so the same `transactionId` will be appeared not only in prepare message, but also in commit message, and consumer received message also contains this field.
-   - Constraints: OPTIONAL
-   
-#### 2.3.14 deliveryCount
-   - Type: `Integer`
-   - Description:  This field indicates the times of the message was delivered, when a consumer consumes a message failed, it will be resend to the server for consume it later. and this field records the consumed times during the consume process.
-   - Constraints: REQUIRED
-   
-#### 2.3.15 correlationId
-   - Type: `String`
-   - Description: A client can use the correlationId header field to link one message with another. A typical use is to link a response message with its request message.
-   - Constraints: OPTIONAL
-  
-#### 2.3.16 destination  
+#### 2.3.6 destination  
    -Type: `String`
    -Description: This filed contains the logic destination to which the message is being sent, such as a queue or a topic.
    When a message is sent this value is set to the right queue, then the message will be sent to the specified destination.
    When a message is received, its destination is equivalent to the queue where the message resides in.
-   - Constraints: REQUIRED          
+   - Constraints: REQUIRED    
+      
+      
   
 ### Notational Conventions
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
@@ -274,34 +232,38 @@ In OpenMessaging, RPC is equal to synchronous message, it isn’t traditional CS
 ## Appendix 
 ### Example of OpenMessaging API
 ```json
- {
+{
         "message": {
            "version":"1.0.0",
-           "headers": {
+           "header": {
                "messageId": "7F00000100002873000000000004F49C",
+               "destination": "orderQueue",
                "bornTimestamp": 1533780827824,
                "bornHost": "172.24.0.101:10035",
+               "compression": "gzip",
+               "qos": 1
+            },
+            "extensionHeader": {
+               "partition": 1,
                "storeTimestamp": 1533780827825,
                "storeHost": "172.24.0.102:52511",
-               "expireTime": 1533780830000,
-               "priority": 1,
-               "compression":"gzip",
-               "traceId": "1E0578887D3F18B4AAC22B64D2B00A5E",
-               "transactionId": "1E0578887D3F18B4AAC22B64D2B40A62",
-               "destination": "orderQueue",
                "messageKey": "orderId-103368921567",
+               "correlationId": "7F00000100002873000000000004F2B4",
                "delayTime": 30000,
-               "durability": 1,
-               "correlationId": "7F00000100002873000000000004F2B4"
-            },
+               "transactionId": "1E0578887D3F18B4AAC22B64D2B40A62",
+               "expireTime": 1533780830000,
+               "traceId": "1E0578887D3F18B4AAC22B64D2B00A5E",
+               "priority": 1
+             },
             "properties": {
                "service": "helloService"
             },
             "data": {}
         }
- }
+}
 ```
 
 ### Change History
 0.3.0 version created, be compatible with existent runtime API.      
-1.0.0 version created, change domain model to queue based model, add type system and schema.
+1.0.0-preview version created, change domain model to queue based model, add type system and schema.
+1.0.0-alpha version created, simplify specification and add extension fields.
