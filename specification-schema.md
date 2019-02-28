@@ -97,15 +97,15 @@
    - Type: `KeyValue`  
    - Description: This field contains extension metadata for message middleware, and these extension fields are not mandatory, but for the time being, most of the message middleware has been
     implemented related content more or less, and these fields have been well known and understood by many messaging and streaming developers, See the ExtFields document for a list of possible properties.
-    See the [ExtFields document](./extensionHeader.md) for a list of possible properties.
+    See the [extension header document](./extensionHeader.md) for a list of possible fields.
    - Constraints: OPTIONAL
       
-#### 2.2.3 properties
+#### 2.2.4 properties
    - Type: `KeyValue`  
    - Description: In addition to the system header, OpenMessaging provides a built-in user properties for adding optional fields to a message, and these fields are represented as key-value forms.
    - Constraints: REQUIRED
    
-#### 2.2.4 data
+#### 2.2.5 data
    - Type: `Binary`  
    - Description: This field is the part of transmitted data that is the actual intended message contains application data.   
    The message body is completely transparent to the server, the server cannot view or modify the message body.  
@@ -133,7 +133,7 @@
    
 #### 2.3.4 qos
    - Type: `Integer`
-   - Description: OpenMessaging defines three modes of message delivery as mentioned in [chapter](#0.3.5-Delivery-Semantics):  
+   - Description: OpenMessaging defines three modes of message delivery as mentioned before:   
    **At least once**: if this value set with 0, a message will be consumed at least once, and this value should be set as default value.  
    **At most once**: if this value set with 1, a message will be consumed at most once, in this semantics, messages may be lost.  
    **Exactly once**: if this value set with 2, a message will be consumed once and only once.  
@@ -265,5 +265,5 @@ In OpenMessaging, RPC is equal to synchronous message, it isn’t traditional CS
 
 ### Change History
 0.3.0 version created, be compatible with existent runtime API.      
-1.0.0-preview version created, change domain model to queue based model, add type system and schema.
+1.0.0-preview version created, change domain model to queue based model, add type system and schema.   
 1.0.0-alpha version created, simplify specification and add extension fields.

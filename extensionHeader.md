@@ -1,4 +1,4 @@
-# OpenMessaging Extension fields
+# OpenMessaging Extension Header
 The [OpenMessaging Specification](./specification-schema.md) defines the core fields of for messaging and  
 streaming, which can meet the needs of most common message middleware 
 message transmissions, but there are still many fields related to the message 
@@ -7,13 +7,13 @@ message. but not so much commonly used as the fields in OpenMessaging
 Specification, but these fields are still very meaningful and can help message 
 middleware achieve more features and improve its visibility.       
 
-So we officially defined some of the following attributes in the extensionHeader: 
+So we officially defined some of the following attributes in `extensionHeader`: 
 
 ## storeTimestamp
    - Type: `Long` 
    - Description: when the `durability` The timestamp that a message stored by server. when a 
-   message is stored by server, this field will be set with the current 
-   timestamp of server.  
+   message is stored by the server, this field will be set with the current 
+   timestamp of the server.  
    It is represented as a long value which is defined as the difference, 
    measured in milliseconds, between this time and midnight, January 1, 1970 
    UTC.       
@@ -22,7 +22,7 @@ So we officially defined some of the following attributes in the extensionHeader
 ## storeHost
    - Type: `String`
    - Description: The host info of the server that stores this message. when a 
-   message is stored by server, this field will be set with the host info of 
+   message is stored by the server, this field will be set with the host info of 
    server.
    - Constraints: OPTIONAL
    
