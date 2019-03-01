@@ -51,6 +51,7 @@ Please see http://openmessaging.cloud/.
 # Release note
 
 #### [Status of 1.0.0-preview Version of OpenMessaging](1.0.0-preview-release-note.md)
+#### [Status of 1.0.0-alpha Version of OpenMessaging](1.0.0-alpha-release-note.md)
 
 # Communications
 Chat with us on the OpenMessaging Slack in the [#general channel:](https://openmessaging.herokuapp.com/) 
