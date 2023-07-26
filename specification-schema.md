@@ -59,11 +59,11 @@
   - `Binary` - Sequence of bytes.
   - `KeyValue` - `String`-indexed dictionary of `String`-typed or `Binary`-typed or `Numeric`-typed values
   - `Numeric`:    
-        - `Short` - Integer in the range -(2^15) to 2^15 - 1 inclusive.
-        - `Integer` - Integer in the range -(2^31) to 2^31 - 1 inclusive.  
-        - `Long` - Integer in the range -(2^63) to 2^63 - 1 inclusive.  
-        - `Float` - A 32-bit floating point number (binary32 [IEEE754](http://ieeexplore.ieee.org/servlet/opac?punumber=4610933)).  
-        - `Double` - A 64-bit floating point number (binary64 [IEEE754](http://ieeexplore.ieee.org/servlet/opac?punumber=4610933)).  
+    - `Short` - Integer in the range -(2^15) to 2^15 - 1 inclusive.
+    - `Integer` - Integer in the range -(2^31) to 2^31 - 1 inclusive.  
+    - `Long` - Integer in the range -(2^63) to 2^63 - 1 inclusive.  
+    - `Float` - A 32-bit floating point number (binary32 [IEEE754](http://ieeexplore.ieee.org/servlet/opac?punumber=4610933)).  
+    - `Double` - A 64-bit floating point number (binary64 [IEEE754](http://ieeexplore.ieee.org/servlet/opac?punumber=4610933)).  
   - `Object` - Either a `String`, or a `Binary`, or a `KeyValue`, or a `Numeric`
   - `URI` - String expression conforming to `URI-reference`
     as defined in
@@ -134,9 +134,9 @@
 #### 2.3.4 qos
    - Type: `Integer`
    - Description: OpenMessaging defines three modes of message delivery as mentioned before:   
-   **At least once**: if this value set with 0, a message will be consumed at least once, and this value should be set as default value.  
-   **At most once**: if this value set with 1, a message will be consumed at most once, in this semantics, messages may be lost.  
-   **Exactly once**: if this value set with 2, a message will be consumed once and only once.  
+     + **At least once**: if this value set with 0, a message will be consumed at least once, and this value should be set as default value.  
+     + **At most once**: if this value set with 1, a message will be consumed at most once, in this semantics, messages may be lost.  
+     + **Exactly once**: if this value set with 2, a message will be consumed once and only once.  
    
 
 #### 2.3.5 compression
@@ -146,8 +146,8 @@
    - Constraints: OPTIONAL
 
 #### 2.3.6 destination  
-   -Type: `String`
-   -Description: This filed contains the logic destination to which the message is being sent, such as a queue or a topic.
+   - Type: `String`
+   - Description: This filed contains the logic destination to which the message is being sent, such as a queue or a topic.
    When a message is sent this value is set to the right queue, then the message will be sent to the specified destination.
    When a message is received, its destination is equivalent to the queue where the message resides in.
    - Constraints: REQUIRED    
@@ -163,14 +163,14 @@ be interpreted as described in [RFC 2119](https://tools.ietf.org/html/rfc2119).
 
 This document lists the most of common use cases supported by OpenMessaging.
  
-1. P2P
-2. Publish/Subscribe
-3. Broadcast
-4. Highway
-5. Streaming
-6. Filter
-7. Routing
-8. RPC
+1. [P2P](#p2p)
+2. [Publish/Subscribe](#publishsubscribe)
+3. [Broadcast](#broadcast)
+4. [Highway](#highway)
+5. [Streaming](#streaming)
+6. [Filter](#filter)
+7. [Routing](#routing)
+8. [RPC](#rpc)
 
 ### P2P
 
